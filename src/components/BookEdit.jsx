@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 
 
 const BookEdit = ({ book, onEdit }) => {
-    // Đảm bảo object book hợp lệ trước khi thiết lập trạng thái ban đầu
     const [title, setTitle] = useState(book ? book.title : "");
     const [des, setDes] = useState(book ? book.des : "");
     const [originalTitle, setOriginalTitle] = useState(book ? book.title : "");
     const [originalDes, setOriginalDes] = useState(book ? book.des : "");
 
     useEffect(() => {
-        // Cập nhật state nếu prop book thay đổi
         if (book) {
             setTitle(book.title);
             setDes(book.des);
@@ -39,11 +37,9 @@ const BookEdit = ({ book, onEdit }) => {
     };
 
     const handleCancel = () => {
-        // Đặt lại title và des về giá trị ban đầu
         setTitle(originalTitle);
         setDes(originalDes);
     };
-
 
     return (
         <div className="container1">
@@ -59,7 +55,6 @@ const BookEdit = ({ book, onEdit }) => {
         </div>
     );
 };
-
 
 export default BookEdit;
 

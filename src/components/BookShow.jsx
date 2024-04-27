@@ -34,6 +34,6 @@ const BookShow = ({ book}) => {
             )}
         </div>
     );
-};
+};  
 
 export default BookShow;

@@ -143,3 +143,8 @@ input[type="submit"]:hover {
 .b3{
     width: 100%;
 }
+
+.pagination li {
+
+ list-style: none;
+}

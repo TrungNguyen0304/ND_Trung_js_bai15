@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import { BookContext } from "../context/book";
 
 const BookCreate = () => {
-    const [title, setTitle] = useState("title");
-    const [des, setDes] = useState("des");
-    const { onCreate} = useContext(BookContext); 
+    const [title, setTitle] = useState("");
+    const [des, setDes] = useState("");
+    const { onCreate } = useContext(BookContext);
 
     const handleChangeDes = (e) => {
         setDes(e.target.value);
@@ -17,12 +17,12 @@ const BookCreate = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const reps = await onCreate({
-          title,
-          des,
+            title,
+            des,
         });
-      
-      };
-      
+        setTitle("");
+        setDes("");
+    };
 
     return (
         <div className="container">

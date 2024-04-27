@@ -1,13 +1,12 @@
 import { useEffect,useState } from "react";
-
-import { FetchBooks } from "../api";
+import { fetchBooks } from "../api";
 
 const useBookContext = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-                const data = await FetchBooks();
+                const data = await fetchBooks();
                 setBooks(data);
         };
         fetchData();
